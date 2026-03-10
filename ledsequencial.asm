@@ -20,12 +20,12 @@
  #define BOTAO2	    PORTA,2
  #define BOTAO3	    PORTA,3
  #define BOTAO4	    PORTA,4
- ;saÌdas
+ ;sa√≠das
  #define SAIDA1     PORTB,0
  #define SAIDA2     PORTB,1
  #define SAIDA3     PORTB,2
  #define SAIDA4     PORTB,3
- ;vari·veis
+ ;vari√°veis
  #define JA_LI1	    FLAGS,0
  #define JA_LI2	    FLAGS,1
  #define JA_LI3	    FLAGS,2
@@ -33,10 +33,10 @@
 
 RES_VECT  CODE    0x0000            ; processor reset vector
     BANK1			    ;seleciona banco 1 da memoria ram
-    BCF	    TRISB,0		    ;configura o pino 0 da porta como saÌda
-    BCF	    TRISB,1		    ;configura o pino 1 da porta como saÌda
-    BCF	    TRISB,2		    ;configura o pino 2 da porta como saÌda
-    BCF	    TRISB,3		    ;configura o pino 3 da porta como saÌda
+    BCF	    TRISB,0		    ;configura o pino 0 da porta como sa√≠da
+    BCF	    TRISB,1		    ;configura o pino 1 da porta como sa√≠da
+    BCF	    TRISB,2		    ;configura o pino 2 da porta como sa√≠da
+    BCF	    TRISB,3		    ;configura o pino 3 da porta como sa√≠da
     BANK0			    ;seleciona banco 0 da memoria ram
     BCF	    SAIDA1		    ;apaga a lampada
     BCF	    SAIDA2		    ;apaga a lampada
@@ -52,10 +52,10 @@ LACO_PRINCIPAL
     GOTO    NAO_PRESS1		    ;se BOTAO nao pressionado, VAI para NAO_PRESS
     BTFSC   JA_LI1		    ;se o botao esta pressionado, testa se JA_LI =0
     GOTO    LACO_PRINCIPAL	    ;se JA_LI =1, pule para LACO_PRINCIPAL
-    BSF	    JA_LI1		    ;se JA_LI =0, faÁa JA_LI =1
-    BTFSS   SAIDA1		    ;testa se lampada est· acesa
+    BSF	    JA_LI1		    ;se JA_LI =0, fa√ßa JA_LI =1
+    BTFSS   SAIDA1		    ;testa se lampada est√° acesa
     GOTO ACENDE_LAMPADA1	    ;se LAMPADA = 0, pule para ACENDE_LAMPADA
-    BCF	    SAIDA1		    ;se LAMPADA = 1, faÁa LAMPADA = 0
+    BCF	    SAIDA1		    ;se LAMPADA = 1, fa√ßa LAMPADA = 0
     GOTO    BOT2		    ;pule para LACO_PRINCIPAL
 
 BOT2
@@ -63,10 +63,10 @@ BOT2
     GOTO    NAO_PRESS2		    ;se BOTAO nao pressionado, VAI para NAO_PRESS
     BTFSC   JA_LI2		    ;se o botao esta pressionado, testa se JA_LI =0
     GOTO    BOT2		    ;se JA_LI =1, pule para LACO_PRINCIPAL
-    BSF	    JA_LI2		    ;se JA_LI =0, faÁa JA_LI =1
-    BTFSS   SAIDA2		    ;testa se lampada est· acesa
+    BSF	    JA_LI2		    ;se JA_LI =0, fa√ßa JA_LI =1
+    BTFSS   SAIDA2		    ;testa se lampada est√° acesa
     GOTO ACENDE_LAMPADA2	    ;se LAMPADA = 0, pule para ACENDE_LAMPADA
-    BCF	    SAIDA2		    ;se LAMPADA = 1, faÁa LAMPADA = 0
+    BCF	    SAIDA2		    ;se LAMPADA = 1, fa√ßa LAMPADA = 0
     GOTO    BOT3		    ;pule para LACO_PRINCIPAL
 
 BOT3
@@ -74,10 +74,10 @@ BOT3
     GOTO    NAO_PRESS3		    ;se BOTAO nao pressionado, VAI para NAO_PRESS
     BTFSC   JA_LI3		    ;se o botao esta pressionado, testa se JA_LI =0
     GOTO    BOT3		    ;se JA_LI =1, pule para LACO_PRINCIPAL
-    BSF	    JA_LI3		    ;se JA_LI =0, faÁa JA_LI =1
-    BTFSS   SAIDA3		    ;testa se lampada est· acesa
+    BSF	    JA_LI3		    ;se JA_LI =0, fa√ßa JA_LI =1
+    BTFSS   SAIDA3		    ;testa se lampada est√° acesa
     GOTO ACENDE_LAMPADA3	    ;se LAMPADA = 0, pule para ACENDE_LAMPADA
-    BCF	    SAIDA3		    ;se LAMPADA = 1, faÁa LAMPADA = 0
+    BCF	    SAIDA3		    ;se LAMPADA = 1, fa√ßa LAMPADA = 0
     GOTO    BOT4		    ;pule para LACO_PRINCIPAL
 
 BOT4
@@ -85,22 +85,22 @@ BOT4
     GOTO    NAO_PRESS4		    ;se BOTAO nao pressionado, VAI para NAO_PRESS
     BTFSC   JA_LI4		    ;se o botao esta pressionado, testa se JA_LI =0
     GOTO    BOT4		    ;se JA_LI =1, pule para LACO_PRINCIPAL
-    BSF	    JA_LI4		    ;se JA_LI =0, faÁa JA_LI =1
-    BTFSS   SAIDA4		    ;testa se lampada est· acesa
+    BSF	    JA_LI4		    ;se JA_LI =0, fa√ßa JA_LI =1
+    BTFSS   SAIDA4		    ;testa se lampada est√° acesa
     GOTO ACENDE_LAMPADA4	    ;se LAMPADA = 0, pule para ACENDE_LAMPADA
-    BCF	    SAIDA4		    ;se LAMPADA = 1, faÁa LAMPADA = 0
+    BCF	    SAIDA4		    ;se LAMPADA = 1, fa√ßa LAMPADA = 0
     GOTO    LACO_PRINCIPAL	    ;pule para LACO_PRINCIPAL   
 ACENDE_LAMPADA1
-    BSF	    SAIDA1		    ;se LAMPADA = 0, faÁa LAMPADA = 1
+    BSF	    SAIDA1		    ;se LAMPADA = 0, fa√ßa LAMPADA = 1
     GOTO    BOT2
 ACENDE_LAMPADA2
-    BSF	    SAIDA2		    ;se LAMPADA = 0, faÁa LAMPADA = 1
+    BSF	    SAIDA2		    ;se LAMPADA = 0, fa√ßa LAMPADA = 1
     GOTO    BOT3
 ACENDE_LAMPADA3
-    BSF	    SAIDA3		    ;se LAMPADA = 0, faÁa LAMPADA = 1
+    BSF	    SAIDA3		    ;se LAMPADA = 0, fa√ßa LAMPADA = 1
     GOTO    BOT4
 ACENDE_LAMPADA4
-    BSF	    SAIDA4		    ;se LAMPADA = 0, faÁa LAMPADA = 1
+    BSF	    SAIDA4		    ;se LAMPADA = 0, fa√ßa LAMPADA = 1
     GOTO    LACO_PRINCIPAL
     
 NAO_PRESS1
